@@ -77,8 +77,8 @@ class BigFish : public BasicAbstractGame {
 
     void game_step() override {
         BasicAbstractGame::game_step();
-
-        if (rand_gen.randn(10) == 1) {
+        int num_fish = (int)(entities.size());
+        if (rand_gen.randn(10) == 1 && num_fish < options.max_entities) {
             float ent_r = (FISH_MAX_R - FISH_MIN_R) * pow(rand_gen.rand01(), 1.4) + FISH_MIN_R;
             float ent_y = rand_gen.rand01() * (main_height - 2 * ent_r);
             float moves_right = rand_gen.rand01() < .5;

@@ -57,7 +57,7 @@ def main():
     parser.add_argument("--level-seed", type=int, help="select an individual level to use")
     args = parser.parse_args()
 
-    kwargs = {"distribution_mode": args.distribution_mode}
+    kwargs = {"distribution_mode": args.distribution_mode, "max_entities": 3}
     if args.level_seed is not None:
         kwargs["start_level"] = args.level_seed
         kwargs["num_levels"] = 1

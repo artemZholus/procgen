@@ -111,7 +111,6 @@ class BaseProcgenEnv(CVecEnv):
         )
 
         self.options = options
-
         super().__init__(
             lib_dir=lib_dir, num_envs=num_envs, debug=debug, options=options
         )
@@ -150,6 +149,7 @@ class ProcgenEnv(BaseProcgenEnv):
         options=None,
         use_generated_assets=False,
         paint_vel_info=False,
+        max_entities=10,
         distribution_mode="hard",
         **kwargs,
     ):
@@ -179,6 +179,7 @@ class ProcgenEnv(BaseProcgenEnv):
                 "use_generated_assets": bool(use_generated_assets),
                 "paint_vel_info": bool(paint_vel_info),
                 "distribution_mode": distribution_mode,
+                "max_entities": int(max_entities) + 1
             }
         )
         super().__init__(num_envs, env_name, options, **kwargs)

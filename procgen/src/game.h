@@ -47,7 +47,7 @@ struct GameOptions {
     int debug_mode = 0;
     DistributionMode distribution_mode = HardMode;
     bool use_sequential_levels = false;
-
+    int max_entities = 10;
     // coinrun_old
     bool use_easy_jump = false;
     int plain_assets = 0;

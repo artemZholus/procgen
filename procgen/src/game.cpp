@@ -60,6 +60,7 @@ void Game::parse_options(std::string name, VecOptions opts) {
         fatal("invalid distribution_mode %d\n", options.distribution_mode);
     }
 
+    opts.consume_int("max_entities", &options.max_entities);
     // coinrun_old
     opts.consume_int("plain_assets", &options.plain_assets);
     opts.consume_int("physics_mode", &options.physics_mode);
