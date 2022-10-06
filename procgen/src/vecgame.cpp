@@ -316,10 +316,10 @@ VecGame::VecGame(int _nenvs, VecOptions opts) {
 }
 
 void VecGame::reset(const std::vector<std::vector<void *>> &obs) {
-    if (!first_reset) {
-        printf("WARNING: Procgen ignores resets, please create a new environment "
-               "instead\n");
-    }
+    //if (!first_reset) {
+    //    printf("WARNING: Procgen ignores resets, please create a new environment "
+    //           "instead\n");
+    //}
     first_reset = false;
     wait_for_stepping_threads();
     for (int e = 0; e < num_envs; e++) {
